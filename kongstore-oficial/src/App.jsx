@@ -35,10 +35,10 @@ function App() {
   const count = 0;
   const objStyle = {color: 'white', backgroundColor: 'blue'};
 
-  // desde React podemos pasar valor de un componente padre a un componente hijo de la function Name creando variables locales en App.
+  // desde React podemos pasar valor de un componente padre a un componente hijo de la function Name creando variables locales en App. Todo lo que entra a App muere en la función. Todo puede modificarse ya que es la función padre.
   let nombre = 'Ezequiel';
   let apellido = 'Miccio';
-  const saludo = () => console.log('Mostrando mensaje en pantalla desde ItemListContainer'); // esta funcion la enviamos por params
+  const saludo = () => document.write('Mostrando mensaje en pantalla desde ItemListContainer'); // esta funcion la enviamos por params
 
   return (
     <div className="App" style={ objStyle }>
@@ -50,7 +50,9 @@ function App() {
   )
 }
 
- /*   const condition = true;
+export default App;
+ /*   
+ const condition = true;
 
   if(condition)
   {
@@ -67,13 +69,16 @@ function App() {
 
 // Sirve para poder modificar el campo de un valor de forma dinamica
 
-/* let campo = 'edad';
+/* 
+let campo = 'edad';
 
 const obj = {
    nombre = 'juan',
    apellido = 'perez',
-   [campo]: '24' // de esta forma hacemos un valor                     dinámico
-} */
+   [campo]: '24' // de esta forma hacemos un valor dinámico
+} 
+
+*/
 
 // DESTRUCTURING = DESTRUCTURACION
 // modificacion de campos, o agregacion de campos con valores
@@ -81,11 +86,11 @@ const obj = {
 const {nombre} = obj
 console.log(nombre);
 
-// se puede modificar el nombre del campo de esta forma
+se puede modificar el nombre del campo de esta forma
 const {nombre: name} = obj
 console.log(name);
 
-// si 'altura' como  no esta definido es undefined, si lo = a un valor, se define ese valor (en este caso 2)
+si 'altura' como  no esta definido es undefined, si lo = a un valor, se define ese valor (en este caso 2)
 const {nombre: name, altura = 2} = obj
 console.log(´altura: ${altura}´); */
 
@@ -94,7 +99,6 @@ console.log(´altura: ${altura}´); */
 
 
 
-export default App;
 
 
 

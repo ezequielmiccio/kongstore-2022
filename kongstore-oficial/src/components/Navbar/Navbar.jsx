@@ -3,9 +3,18 @@ import CartWidge from '../CartWidge/CartWidge';
 
 const Navbar = () => {
   return (
-    <div>
-      <CartWidge />
-    </div>
+    <nav id="nav">
+
+      <h2 className='logoStyle'>KONGSTORE</h2>
+
+
+      <ul>
+
+        <CartWidge />
+
+      </ul>
+    
+    </nav>
   )
 }
 

@@ -4,8 +4,8 @@ import Titulo from '../Titulo/Titulo'
 
 function ItemListContainer() {
 
-    let titulo = 'titulo de App';
-    let subTitulo = 'subtitulo de App';
+    let titulo = 'Mostrar mensaje en pantalla';
+    let subTitulo = 'Desafio clase 3/4';
 
   return (
         <div>
