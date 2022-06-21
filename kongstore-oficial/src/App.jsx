@@ -3,8 +3,8 @@
 
 // COMPONENTES CREADOS
 import './App.css';
-import Navbar from './Navbar/Navbar';
-import ComponenteContenedor from './container/ComponenteContenedor';
+import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/container/ItemListContainer';
 
 // COMPONENTES STYLES
 
@@ -38,19 +38,14 @@ function App() {
   // desde React podemos pasar valor de un componente padre a un componente hijo de la function Name creando variables locales en App.
   let nombre = 'Ezequiel';
   let apellido = 'Miccio';
-  const saludo = () => console.log('Saludando...'); // le vamos a pasar este valor por parametro al componente Titulo
+  const saludo = () => console.log('Mostrando mensaje en pantalla desde ItemListContainer'); // esta funcion la enviamos por params
 
   return (
     <div className="App" style={ objStyle }>
       <Navbar />
-      <ComponenteContenedor saludo={saludo()}/>
-        {count}
-        {/* 
-        Esto lo traigo desde ComponenteContenedor
-        <Titulo functionParam={saludo()}/>
-        <Formulario /> 
-        */}
-        <Name nombre={nombre} apellido={apellido} /> 
+      <ItemListContainer saludo={saludo()}/>
+      {count} 
+      <Name nombre={nombre} apellido={apellido} /> 
     </div>
   )
 }

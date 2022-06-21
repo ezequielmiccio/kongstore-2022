@@ -1,11 +1,14 @@
 import React from 'react'
+import CartWidge from '../CartWidge/CartWidge';
 
-const Navbar = (children) => {
+const Navbar = () => {
   return (
-    <div>{children}</div>
+    <div>
+      <CartWidge />
+    </div>
   )
 }
 
-export default Navbar
+export default Navbar;
 
 // rfc para crear el componente automaticamente

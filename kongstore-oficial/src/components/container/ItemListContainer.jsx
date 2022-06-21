@@ -2,7 +2,7 @@ import React from 'react'
 import Formulario from '../Formulario/Formulario'
 import Titulo from '../Titulo/Titulo'
 
-function ComponenteContenedor() {
+function ItemListContainer() {
 
     let titulo = 'titulo de App';
     let subTitulo = 'subtitulo de App';
@@ -11,13 +11,11 @@ function ComponenteContenedor() {
         <div>
             <Titulo titulo={titulo} subTitulo={subTitulo} />
             <Formulario />
-
-
         </div>
     )
 }
 
-export default ComponenteContenedor
+export default ItemListContainer;
 
 // Contienen lógica de estados.
 // Contienen componentes contenedores.
