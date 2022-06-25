@@ -1,6 +1,5 @@
 // COMPONENTES REACT
 
-
 // COMPONENTES CREADOS
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
