@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function CartWidge() {
+const CartWidge = () => {
   return (
     <React.Fragment>
+
         <li>
             <a href="#registro">
                 <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="1.8rem"
@@ -39,8 +40,5 @@ function CartWidge() {
 }
 
 export default CartWidge;
-
-
-
 
 // rfc

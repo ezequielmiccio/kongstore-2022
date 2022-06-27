@@ -3,7 +3,7 @@ import Titulo from "../Titulo/Titulo";
 const Formulario = () => {
     return(
         <div>
-            <Titulo titulo={'Titulo Form'} subTitulo={'Subtitulo form'} />
+            <Titulo titulo={'Titulo desde Formulario'} subTitulo={'Subtitulo desde formulario'} />
             <input type="text" />
         </div>
     )
