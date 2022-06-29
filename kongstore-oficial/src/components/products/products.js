@@ -73,15 +73,15 @@ const Products = [
 ];
 
 
-export const gFetch = new Promise( (resolve, reject) => () => {
+export const gFetch = new Promise( (resolve, reject) => {
     let condition = true;
  
-   if(condition){
-    //setTime para que se muestre a los 3 segundos
-    setTimeout(() => {
-        resolve(Products); // retorna productos
-    }, 3000)
-   } else {
-      reject('error');
-   }
+    if(condition){
+     //setTime para que se muestre a los 3 segundos
+     setTimeout(() => {
+            resolve(Products); // retorna productos
+        }, 2000)
+    } else {
+      reject('400 not found');
+    }
 })

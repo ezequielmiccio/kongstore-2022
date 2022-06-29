@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import {gFetch} from '../products/Products';
+import {gFetch} from '../products/products';
 import Formulario from '../Formulario/Formulario'
 import Titulo from '../Titulo/Titulo'
 
 const ItemListContainer = () => {
 
     // inicializo con array vacio ya que espero array desde otro archivo
-    const [Products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     let titulo = 'Titulo desde ItemListContainer';
     let subTitulo = 'Subtitlo desde ItemListContainer';
@@ -23,20 +23,20 @@ const ItemListContainer = () => {
         setLoading(!loading);
     }
 
-    console.log(Products);
+    console.log(products);
 
     return(
         <div>
 
             <Formulario />
             <Titulo titulo={titulo} subTitulo={subTitulo} />
-            <button onClick={handleBool}>cambiar estado</button>
+            <button onClick={handleBool}>VER MÁS</button>
 
             {loading ? 
               <h2>Cargando...</h2>
             :
 
-            Products.map(prod => <li key={prod.id}>{prod.name}</li>)
+            products.map(prod => <li key={prod.id}>{prod.name}</li>)
             }
             
         </div>
