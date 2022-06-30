@@ -1,6 +1,6 @@
-const Products = [
+const products = [
     {   id: 1, 
-        nombre: "Fifa 20" , 
+        name: "Fifa 20" , 
         precio: 4500 , 
         img: "./assets/img/fifa20.jpg" , 
         ahorro: "15%" , 
@@ -9,7 +9,7 @@ const Products = [
     },
 
     {   id: 2, 
-        nombre: "NBA 2k20", 
+        name: "NBA 2k20", 
         precio: 3750 , 
         img: "./assets/img/pes2020.jpg" , 
         ahorro: "25%" , 
@@ -18,7 +18,7 @@ const Products = [
     },
 
     {   id: 3, 
-        nombre: "PES 2020" , 
+        name: "PES 2020" , 
         precio: 2600 , 
         img: "./assets/img/nba2k20.jpg" , 
         ahorro: "30%" , 
@@ -27,7 +27,7 @@ const Products = [
     },
 
     {   id: 4, 
-        nombre: "GTA V" , 
+        name: "GTA V" , 
         precio: 3200 , 
         img: "./assets/img/gtaV.jpg" , 
         ahorro: "15%" , 
@@ -36,7 +36,7 @@ const Products = [
     },
 
     {   id: 5, 
-        nombre: "Crash Team Racing" , 
+        name: "Crash Team Racing" , 
         precio: 5700 , 
         img: "./assets/img/crashRacing.jpg" , 
         ahorro: "10%" , 
@@ -45,7 +45,7 @@ const Products = [
     },
 
     {   id: 6, 
-        nombre: "Mortal Kombat XL" , 
+        name: "Mortal Kombat XL" , 
         precio: 1900 , 
         img: "./assets/img/mortalkombatXL.jpg" , 
         ahorro: "50%", 
@@ -54,16 +54,16 @@ const Products = [
     },
 
     {   id: 7, 
-        nombre: "Call Of Duty" , 
+        name: "Call Of Duty" , 
         precio: 4600 , 
-        img: "./assets/img/callOfDuty.jpg" , 
+        img: "../../../assets/img/callOfDuty.jpg" , 
         ahorro: "20%" , 
         info: "Asesinatos, Modern Warfare, Multiplayer",
         stock: 20
     },
     
     {   id: 8, 
-        nombre: "Need For Speed" , 
+        name: "Need For Speed" , 
         precio: 1200 , 
         img: "./assets/img/nfsHeat.jpg" , 
         ahorro: "65%" , 
@@ -76,10 +76,9 @@ const Products = [
 export const gFetch = new Promise( (resolve, reject) => {
     let condition = true;
  
-    if(condition){
-     //setTime para que se muestre a los 3 segundos
+    if(condition) {
      setTimeout(() => {
-            resolve(Products); // retorna productos
+            resolve(products);
         }, 2000)
     } else {
       reject('400 not found');
