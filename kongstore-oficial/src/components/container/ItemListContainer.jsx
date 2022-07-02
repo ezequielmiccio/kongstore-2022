@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useParams} from 'react'
 import {gFetch} from '../products/products';
 import Formulario from '../Formulario/Formulario'
 import Titulo from '../Titulo/Titulo'
@@ -11,12 +11,26 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const {categoriaId} = useParams();
+    console.log(categoriaId);
+
     useEffect(() => {
-        gFetch
-        .then(resp => setProducts(resp))
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    }, [])
+        // si coincide me devuelve un array con filter id
+        if(categoriaId) {
+            gFetch
+            .then(resp => setProducts(resp.filter(prod => prod.categoria === categoriaId)))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
+
+        }else {
+            gFetch
+            .then(resp => setProducts(resp))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
+        }
+
+    }, [categoriaId])
+
 
     const handleBool = () => {
         setLoading(!loading);
@@ -67,26 +81,3 @@ export default ItemListContainer;
 
 // Contienen lógica de estados.
 // Contienen componentes contenedores.
-
-/* 
-
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-  </Card.Body>
-  <ListGroup className="list-group-flush">
-    <ListGroupItem>Cras justo odio</ListGroupItem>
-    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem>Vestibulum at eros</ListGroupItem>
-  </ListGroup>
-  <Card.Body>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-*/
