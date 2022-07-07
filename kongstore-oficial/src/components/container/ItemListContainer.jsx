@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useParams} from 'react'
 import {gFetch} from '../products/products';
 import Formulario from '../Formulario/Formulario'
-import Titulo from '../Titulo/Titulo'
 
 const ItemListContainer = () => {
     //let titulo = 'Titulo desde ItemListContainer';
@@ -64,8 +63,8 @@ const ItemListContainer = () => {
                             <li className="list-group-item">{prod.info}</li>
                         </ul>
                         <div className="card-body">
-                            <a href="#" className="card-link">COMPRAR</a>
-                            <a href="#" className="card-link">VER MÁS</a>
+                            <p href="#" className="card-link">COMPRAR</p>
+                            <p href="#" className="card-link">VER MÁS</p>
                         </div>
 
                     </div> 
