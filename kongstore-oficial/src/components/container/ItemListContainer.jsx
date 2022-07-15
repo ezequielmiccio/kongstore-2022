@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useParams} from 'react'
 import {gFetch} from '../products/products';
 import Formulario from '../Formulario/Formulario'
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = () => {
     //let titulo = 'Titulo desde ItemListContainer';
@@ -46,30 +47,8 @@ const ItemListContainer = () => {
 
             {loading ? 
               <h2>Cargando productos...</h2>
-              
              :
-             products.map(prod =>
-                <div key={prod.id} className='col-md-4 p-1'>
-                
-                    <div className="card w-100">
-                        <img src={prod.img} className="card-img-top" alt="img"/>
-                        <div className="card-body">
-                            <h5 className="card-title">{prod.name}</h5>
-                            <p className="card-text">{prod.info}</p>
-                        </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">{prod.name}</li>
-                            <li className="list-group-item">${prod.precio}</li>
-                            <li className="list-group-item">{prod.info}</li>
-                        </ul>
-                        <div className="card-body">
-                            <p href="#" className="card-link">COMPRAR</p>
-                            <p href="#" className="card-link">VER MÁS</p>
-                        </div>
-
-                    </div> 
-
-                </div> )
+             <ItemList />
             }
             
         </div>

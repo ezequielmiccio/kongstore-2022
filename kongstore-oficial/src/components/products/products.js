@@ -80,6 +80,7 @@ const products = [
     }
 ];
 
+export default products;
 
 export const gFetch = new Promise( (resolve, reject) => {
     let condition = true;
