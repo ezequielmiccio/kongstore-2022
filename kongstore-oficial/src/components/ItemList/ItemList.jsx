@@ -1,17 +1,20 @@
-import React from "react";
+import React from 'react';
 import Item from "../Item/Item";
-import products from '../products/products';
+import products from '../products/products'
 
 function ItemList () {
 
     return (
-        <React.Fragment>
-            {products.map(prod =>
-                <div>
-                    <Item />
-                </div> 
+        <div style={{
+                display:'flex',
+                flexDirection:'row',
+                flexWrap:'wrap',
+            }}
+        >
+            {products.map(() =>
+                <Item />
             )}
-        </React.Fragment>
+        </div>
     );
 
 }

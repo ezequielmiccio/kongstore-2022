@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useParams} from 'react'
+import React, {useState, useEffect} from 'react'
 import {gFetch} from '../products/products';
 import Formulario from '../Formulario/Formulario'
 import ItemList from '../ItemList/ItemList';
@@ -11,14 +11,14 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const {categoriaId} = useParams();
-    console.log(categoriaId);
-
+/*     const {categoriaId} = useParams();
+    console.log(categoriaId); */
+    
     useEffect(() => {
         // si coincide me devuelve un array con filter id
-        if(categoriaId) {
+        if(loading) {
             gFetch
-            .then(resp => setProducts(resp.filter(prod => prod.categoria === categoriaId)))
+            .then(resp => setProducts(resp))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
 
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
             .finally(() => setLoading(false))
         }
 
-    }, [categoriaId])
+    }, [loading])
 
 
     const handleBool = () => {
@@ -42,7 +42,6 @@ const ItemListContainer = () => {
         <div>
 
             <Formulario />
-            {/* <Titulo titulo={titulo} subTitulo={subTitulo} /> */}
             <button onClick={handleBool}>VER PRODUCTOS</button>
 
             {loading ? 
@@ -53,9 +52,12 @@ const ItemListContainer = () => {
             
         </div>
     )
-
+    
 }
 export default ItemListContainer;
 
+
+
 // Contienen lógica de estados.
 // Contienen componentes contenedores.
+// <Titulo titulo={titulo} subTitulo={subTitulo} />

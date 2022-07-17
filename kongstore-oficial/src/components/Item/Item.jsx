@@ -1,7 +1,8 @@
+import React from 'react'
+
 function Item (prod) {
 
     return(
-
         
         <div key={prod.id} className='col-md-4 p-1'>
                     
@@ -25,8 +26,6 @@ function Item (prod) {
 
         </div>
     )
-
-
 }
 
 export default Item;
