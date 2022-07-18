@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Item (prod) {
 
@@ -18,8 +19,17 @@ function Item (prod) {
                     <li className="list-group-item">{prod.info}</li>
                 </ul>
                 <div className="card-body">
-                    <p href="#" className="card-link">COMPRAR</p>
-                    <p href="#" className="card-link">VER MÁS</p>
+                    <Link to='/detail'>
+
+                        <button href="#" className="card-link">
+                            COMPRAR
+                        </button>
+
+                        <button href="#" className="card-link">
+                            VER MÁS
+                        </button>
+                        
+                    </Link>
                 </div>
 
             </div> 

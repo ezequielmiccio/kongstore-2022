@@ -1,25 +1,44 @@
-// COMPONENTES REACT
-//import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
-// COMPONENTES CREADOS
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/container/ItemListContainer';
-//import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer';
-//import Cart from './components/container/Cart/Cart';
-// COMPONENTES STYLES
+import ItemListContainer from './components/container/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/container/Cart/Cart';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import { useEffect } from 'react';
+import Aside from './components/Aside/Aside';
 
 function App() {
 
   const count = 0;
 
   return (
+	<BrowserRouter>
       <div className="App">
-          <Navbar />
-		  <ItemListContainer />
-		  
-{/*         <Routes>
+          	<Navbar />
+			<Aside />
+
+		  	<Routes>
+				<Route index path='/' element={<ItemListContainer />} />
+				<Route index path='/categoria' element={<ItemListContainer />} />
+				<Route path='/detail' element={<ItemDetailContainer />} />
+				<Route path='/cart' element={<Cart />} />
+
+				<Route path='*' element={<Navigate to='/' />} />
+			</Routes>
+
+
+          {count}
+      </div>
+	</BrowserRouter>
+  )
+}
+
+export default App;
+
+// ternary: condition ? IfTrue : ifFalse
+/* 
+
+/*         <Routes>
 
           <Route index path='/' element={<ItemListContainer />} />
           <Route path='/detalle/:categoriaId' element={<ItemDetailContainer />} />
@@ -28,16 +47,7 @@ function App() {
 
           <Route path='*' element={<Navigate to='/404'/>} />
 
-        </Routes> */}
-        {count}
-      </div>
-  )
-}
-
-export default App;
-
-// ternary: condition ? IfTrue : ifFalse
-/* 
+        </Routes>
 
 CODIGO PROFESOR:
 

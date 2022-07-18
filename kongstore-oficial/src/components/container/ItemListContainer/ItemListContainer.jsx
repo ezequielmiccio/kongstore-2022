@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {gFetch} from '../products/products';
-import Formulario from '../Formulario/Formulario'
-import ItemList from '../ItemList/ItemList';
+import {gFetch} from '../../products/products';
+import Formulario from '../../Formulario/Formulario'
+import ItemList from '../../ItemList/ItemList';
 
 const ItemListContainer = () => {
     //let titulo = 'Titulo desde ItemListContainer';
