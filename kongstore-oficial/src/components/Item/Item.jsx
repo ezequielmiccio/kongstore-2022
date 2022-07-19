@@ -19,7 +19,7 @@ function Item (prod) {
                     <li className="list-group-item">{prod.info}</li>
                 </ul>
                 <div className="card-body">
-                    <Link to='/detail'>
+                    <Link to={`/categoria/${prod.id}`}>
 
                         <button href="#" className="card-link">
                             COMPRAR
