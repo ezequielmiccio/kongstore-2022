@@ -2,7 +2,6 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer';
-import { ItemDetail } from './components/container/ItemDetailContainer/ItemDetail';
 import Cart from './components/container/Cart/Cart';
 import Login from './components/Login/Login';
 import Message from './components/Message/Message'

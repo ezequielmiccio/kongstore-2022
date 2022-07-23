@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Aside = () => {
 
     return(
@@ -13,29 +12,29 @@ const Aside = () => {
             >
                 <ul>
 
-                    <li>
-                        <Link to='categoria/pc'>
+                    <Link to='/categoria/pc'>
+                        <li>
                             <span>
                                 PC
                             </span>
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                     
-                    <li>
-                        <Link to='categoria/ps4'>
+                    <Link to='/categoria/ps4'>
+                        <li>
                             <span>
                                 PS4
                             </span>
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                     
-                    <li>
-                        <Link to='categoria/ps5'>
+                    <Link to='/categoria/ps5'>
+                        <li>
                             <span>
                                 PS5
                             </span>
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                 
                 </ul>
                 
