@@ -1,7 +1,9 @@
+//import img from '../../../assets/img/'
+
 const products = [
     {   id: 1, 
         name: "Fifa 20" ,
-        categoria: 'Juegos',
+        categoria: 'pc',
         precio: 4500 , 
         img: "../../../assets/img/fifa20.jpg" , 
         ahorro: "15%" , 
@@ -11,7 +13,7 @@ const products = [
 
     {   id: 2, 
         name: "NBA 2k20",
-        categoria: 'Juegos', 
+        categoria: 'pc', 
         precio: 3750 , 
         img: "../../../assets/img/pes2020.jpg" , 
         ahorro: "25%" , 
@@ -21,7 +23,7 @@ const products = [
 
     {   id: 3, 
         name: "PES 2020" ,
-        categoria: 'Juegos', 
+        categoria: 'ps4', 
         precio: 2600 , 
         img: "../../../assets/img/nba2k20.jpg" , 
         ahorro: "30%" , 
@@ -31,7 +33,7 @@ const products = [
 
     {   id: 4, 
         name: "GTA V" ,
-        categoria: 'Juegos', 
+        categoria: 'ps4', 
         precio: 3200 , 
         img: "../../../assets/img/gtaV.jpg" , 
         ahorro: "15%" , 
@@ -41,7 +43,7 @@ const products = [
 
     {   id: 5, 
         name: "Crash Team Racing" ,
-        categoria: 'Juegos', 
+        categoria: 'ps5', 
         precio: 5700 , 
         img: "../../../assets/img/crashRacing.jpg" , 
         ahorro: "10%" , 
@@ -51,7 +53,7 @@ const products = [
 
     {   id: 6, 
         name: "Mortal Kombat XL" ,
-        categoria: 'Juegos', 
+        categoria: 'ps5', 
         precio: 1900 , 
         img: "assets/img/mortalkombatXL.jpg" , 
         ahorro: "50%", 
@@ -61,7 +63,7 @@ const products = [
 
     {   id: 7, 
         name: "Call Of Duty" ,
-        categoria: 'Juegos', 
+        categoria: 'ps4', 
         precio: 4600 , 
         img: "assets/img/callOfDuty.jpg" , 
         ahorro: "20%" , 
@@ -71,7 +73,7 @@ const products = [
     
     {   id: 8, 
         name: "Need For Speed" ,
-        categoria: 'Juegos', 
+        categoria: 'ps5', 
         precio: 1200 , 
         img: "assets/img/nfsHeat.jpg" , 
         ahorro: "65%" , 
@@ -79,8 +81,6 @@ const products = [
         stock: 20
     }
 ];
-
-export default products;
 
 export const gFetch = new Promise( (resolve, reject) => {
     let condition = true;

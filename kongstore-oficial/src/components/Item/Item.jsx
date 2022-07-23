@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function Item (prod) {
+function Item ({prod}) {
 
     return(
         
@@ -19,7 +19,7 @@ function Item (prod) {
                     <li className="list-group-item">{prod.info}</li>
                 </ul>
                 <div className="card-body">
-                    <Link to={`/categoria/${prod.id}`}>
+                    <Link to={`/detail/${prod.id}`}>
 
                         <button href="#" className="card-link">
                             COMPRAR

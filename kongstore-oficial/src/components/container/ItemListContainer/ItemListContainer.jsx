@@ -1,59 +1,44 @@
 import React, {useState, useEffect} from 'react'
 import {gFetch} from '../../products/products';
-import Formulario from '../../Formulario/Formulario'
 import ItemList from '../../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    //let titulo = 'Titulo desde ItemListContainer';
-    //let subTitulo = 'Subtitlo desde ItemListContainer';
-
+    const {categoryId} = useParams;
     // inicializo con array vacio ya que espero array desde otro archivo
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-/*     const {categoriaId} = useParams();
-    console.log(categoriaId); */
+    const [loading, setLoading] = useState(false);
     
     useEffect(() => {
-        // si coincide me devuelve un array con filter id
-        if(loading) {
+        setLoading(true)
             gFetch
-            .then(resp => setProducts(resp))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+            .then((resp) => {
+                if(categoryId !== undefined) {
+                    const filtro = resp.filter((e) => e.categoria === categoryId);
+                    setProducts(filtro);
 
-        }else {
-            gFetch
-            .then(resp => setProducts(resp))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        }
-
-    }, [loading])
-
-
-    const handleBool = () => {
-        setLoading(!loading);
-    }
-
-    console.log(products);
+                } else {
+                    setProducts(resp);
+                }
+            })
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false));
+    }, [categoryId]) 
 
     return(
         <div>
 
-            <Formulario />
-            <button onClick={handleBool}>VER PRODUCTOS</button>
-
             {loading ? 
               <h2>Cargando productos...</h2>
              :
-             <ItemList />
+             <ItemList productos={products}/>
             }
             
         </div>
-    )
+    );
     
-}
+};
+
 export default ItemListContainer;
 
 

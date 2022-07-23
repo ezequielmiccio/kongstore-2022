@@ -2,12 +2,10 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer';
+import { ItemDetail } from './components/container/ItemDetailContainer/ItemDetail';
 import Cart from './components/container/Cart/Cart';
 import Login from './components/Login/Login';
 import Message from './components/Message/Message'
-import Pc from './components/Aside/Pc/Pc';
-import Ps4 from './components/Aside/Ps4/Ps4';
-import Ps5 from './components/Aside/Ps5/Ps5';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Aside from './components/Aside/Aside';
@@ -25,13 +23,10 @@ function App() {
 		  	<Routes>
 				<Route index path='/' element={<ItemListContainer />} />
 				<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
-				<Route path='/detail' element={<ItemDetailContainer />} />
+				<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
 				<Route path='/cart' element={<Cart />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/message' element={<Message />} />
-				<Route path='/pc' element={<Pc />} />
-				<Route path='/ps4' element={<Ps4 />} />
-				<Route path='/ps5' element={<Ps5 />} />
 
 				<Route path='*' element={<Navigate to='/' />} />
 			</Routes>

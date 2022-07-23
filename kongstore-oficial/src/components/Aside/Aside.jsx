@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Aside = () => {
@@ -14,27 +14,27 @@ const Aside = () => {
                 <ul>
 
                     <li>
-                        <NavLink to='/pc'>
-                            <a href='#pc'>
+                        <Link to='categoria/pc'>
+                            <span>
                                 PC
-                            </a>
-                        </NavLink>
+                            </span>
+                        </Link>
                     </li>
                     
                     <li>
-                        <NavLink to='/ps4'>
-                            <a href='#ps4'>
+                        <Link to='categoria/ps4'>
+                            <span>
                                 PS4
-                            </a>
-                        </NavLink>
+                            </span>
+                        </Link>
                     </li>
                     
                     <li>
-                        <NavLink to='/ps5'>
-                            <a href='#ps5'>
+                        <Link to='categoria/ps5'>
+                            <span>
                                 PS5
-                            </a>
-                        </NavLink>
+                            </span>
+                        </Link>
                     </li>
                 
                 </ul>

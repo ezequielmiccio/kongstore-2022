@@ -1,8 +1,7 @@
 import React from 'react';
 import Item from "../Item/Item";
-import products from '../products/products'
 
-function ItemList () {
+function ItemList ({productos}) {
 
     return (
         <div style={{
@@ -11,8 +10,8 @@ function ItemList () {
                 flexWrap:'wrap',
             }}
         >
-            {products.map(() =>
-                <Item />
+            {productos.map((item) =>
+                <Item prod={item}/>
             )}
         </div>
     );
