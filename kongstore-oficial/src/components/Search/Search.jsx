@@ -1,36 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Search = () => {
 
+  const [value, setValue] = useState('');
+ 
+  const onChangeValue = (e) => {
+    setValue(e.target.value);
+  };
+
+  const onHandlerSubmit = (e) => {
+    e.preventDefault();
+    console.log(value);
+  };
+
   return (
     <React.Fragment>
+      <form onSubmit={onHandlerSubmit} className='d-flex'>
           <li>
-              <input type="search" className="search" placeholder="¿Que estás buscando?" />
+            <input type="search" className="search" placeholder="¿Que estás buscando?" onChange={onChangeValue} />
           </li>
+
+          <button>Buscar</button>
+      </form>
     </React.Fragment>
   )
 }
 
 export default Search;
-
-
-
-/*   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState("");
-
-  const getFetchApi = (url) => {
-      fetch(url)
-      .then( resp => {
-          return resp.json()
-      })
-      .then( data => {
-          console.table(data)
-          setProducts(data)
-      })
-      .catch( err => console.log(err))
-    }
-  
-    useEffect(() => {
-      const url = `https://api.mercadolibre.com/sites/MLA/search?q=${search}`;
-      getFetchApi(url);
-    }) */

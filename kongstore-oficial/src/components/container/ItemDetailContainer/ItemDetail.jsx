@@ -13,6 +13,7 @@ const ItemDetail = ({detail}) => {
 
                 <div className="card-body">
                     <h5 className="card-title text-dark">{detail.name}</h5>
+                    <p className="card-text text-dark">{detail.categoria}</p>
                     <p className="card-text text-dark">{detail.info}</p>
                 </div>
 

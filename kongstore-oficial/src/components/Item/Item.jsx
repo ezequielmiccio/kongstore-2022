@@ -15,6 +15,7 @@ function Item ({prod}) {
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">{prod.name}</li>
+                    <li className="list-group-item">{prod.categoria}</li>
                     <li className="list-group-item">${prod.precio}</li>
                     <li className="list-group-item">{prod.info}</li>
                 </ul>
