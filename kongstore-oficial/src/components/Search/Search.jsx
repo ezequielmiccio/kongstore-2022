@@ -3,15 +3,26 @@ import React, { useState } from 'react';
 const Search = () => {
 
   const [value, setValue] = useState('');
- 
+
   const onChangeValue = (e) => {
     setValue(e.target.value);
   };
 
   const onHandlerSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
-  };
+
+    const gameInput = value.toLocaleLowerCase().replace(/ /g,  '');
+
+    console.log(gameInput);
+
+    if(gameInput !== undefined){
+      fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${gameInput}`)
+      .then(resp => resp.json)
+      .then(json => console.log(json))
+    }
+    
+    setValue('');
+  }
 
   return (
     <React.Fragment>
