@@ -1,13 +1,14 @@
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/container/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/container/Cart/Cart';
 import Login from './components/Login/Login';
 import Message from './components/Message/Message'
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Aside from './components/Aside/Aside';
+import { GamesProvider } from './components/products/products';
+import './App.css';
 
 function App() {
 
@@ -15,24 +16,27 @@ function App() {
 
   return (
 	<BrowserRouter>
-      <div className="App">
-          	<Navbar />
-			<Aside />
+		<GamesProvider>
 
-		  	<Routes>
-				<Route index path='/' element={<ItemListContainer />} />
-				<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
-				<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
-				<Route path='/cart' element={<Cart />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/message' element={<Message />} />
+			<div className="App">
+					<Navbar />
+					<Aside />
 
-				<Route path='*' element={<Navigate to='/' />} />
-			</Routes>
+					<Routes>
+						<Route index path='/' element={<ItemListContainer />} />
+						<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
+						<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
+						<Route path='/cart' element={<Cart />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/message' element={<Message />} />
 
-
-          {count}
-      </div>
+						<Route path='*' element={<Navigate to='/' />} />
+					</Routes>
+				
+				{count}
+			</div>
+			
+		</GamesProvider>
 	</BrowserRouter>
   )
 }

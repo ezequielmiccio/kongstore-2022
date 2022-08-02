@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Item from "../Item/Item";
+import { GamesContext } from "../products/products"
 
-function ItemList ({productos}) {
+function ItemList () {
+    const[games, setGames] = useContext(GamesContext);
 
     return (
         <div style={{
@@ -10,7 +12,7 @@ function ItemList ({productos}) {
                 flexWrap:'wrap',
             }}
         >
-            {productos.map((item) =>
+            {games.map((item) =>
                 <Item prod={item}/>
             )}
         </div>

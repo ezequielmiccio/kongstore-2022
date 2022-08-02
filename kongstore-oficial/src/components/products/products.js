@@ -1,4 +1,6 @@
-//import img from '../../../assets/img/'
+import React, { createContext, useState} from "react";
+
+export const GamesContext = createContext();
 
 const products = [
     {   id: 1, 
@@ -81,6 +83,17 @@ const products = [
         stock: 20
     }
 ];
+
+export const GamesProvider = ({children}) => {
+    const [games, setGames] = useState(products);
+
+    return (
+        <GamesContext.Provider value={[games, setGames]}>
+            {children}
+        </GamesContext.Provider>
+    )
+
+};
 
 export const gFetch = new Promise( (resolve, reject) => {
     let condition = true;

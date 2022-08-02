@@ -16,6 +16,7 @@ const Search = () => {
     console.log(gameInput);
 
     if(gameInput !== undefined){
+      // hacer esto con json interno
       fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${gameInput}`)
       .then(resp => resp.json)
       .then(json => console.log(json))
