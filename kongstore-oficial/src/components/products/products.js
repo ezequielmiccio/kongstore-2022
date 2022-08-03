@@ -1,4 +1,4 @@
-import React, { createContext, useState} from "react";
+import React, { createContext, useState } from "react";
 
 export const GamesContext = createContext();
 
@@ -10,7 +10,7 @@ const products = [
         img: "../../../assets/img/fifa20.jpg" , 
         ahorro: "15%" , 
         info: "Deportes",
-        stock: 20
+        stock: 12
     },
 
     {   id: 2, 
@@ -20,7 +20,7 @@ const products = [
         img: "../../../assets/img/pes2020.jpg" , 
         ahorro: "25%" , 
         info: "Deportes",
-        stock: 20
+        stock: 13
     },
 
     {   id: 3, 
@@ -30,7 +30,7 @@ const products = [
         img: "../../../assets/img/nba2k20.jpg" , 
         ahorro: "30%" , 
         info: "Deportes",
-        stock: 20
+        stock: 16
     },
 
     {   id: 4, 
@@ -40,7 +40,7 @@ const products = [
         img: "../../../assets/img/gtaV.jpg" , 
         ahorro: "15%" , 
         info: "GTA V esta diseñado para mayores de 16 años",
-        stock: 20
+        stock: 8
     },
 
     {   id: 5, 
@@ -50,7 +50,7 @@ const products = [
         img: "../../../assets/img/crashRacing.jpg" , 
         ahorro: "10%" , 
         info: "Aventura, Carrera",
-        stock: 20
+        stock: 6
     },
 
     {   id: 6, 
@@ -60,7 +60,7 @@ const products = [
         img: "assets/img/mortalkombatXL.jpg" , 
         ahorro: "50%", 
         info: "Sangriento, 1 vs 1, Multiplayer",
-        stock: 20
+        stock: 10
     },
 
     {   id: 7, 
@@ -70,7 +70,7 @@ const products = [
         img: "assets/img/callOfDuty.jpg" , 
         ahorro: "20%" , 
         info: "Asesinatos, Modern Warfare, Multiplayer",
-        stock: 20
+        stock: 15
     },
     
     {   id: 8, 
@@ -80,7 +80,17 @@ const products = [
         img: "assets/img/nfsHeat.jpg" , 
         ahorro: "65%" , 
         info: "Carrera, Adrenalina, Multiplayer",
-        stock: 20
+        stock: 30
+    },
+
+    {   id: 9, 
+        name: "UFC 3" ,
+        categoria: 'ps4', 
+        precio: 1700 , 
+        img: "assets/img/nfsHeat.jpg" , 
+        ahorro: "25%" , 
+        info: "Pelea, Multiplayer",
+        stock: 10
     }
 ];
 

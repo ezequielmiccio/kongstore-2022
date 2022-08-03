@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import {gFetch} from '../../products/products';
+import React, { useContext, useState, useEffect} from 'react'
+import { gFetch } from '../../products/products';
 import ItemList from '../../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { GamesContext } from '../../products/products';
 
 const ItemListContainer = () => {
     const {categoryId} = useParams();
-    // inicializo con array vacio ya que espero array desde otro archivo
-    const [products, setProducts] = useState([]);
+    const [games, setGames] = useContext(GamesContext)
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
@@ -15,10 +15,10 @@ const ItemListContainer = () => {
             .then((resp) => {
                 if(categoryId !== undefined) {
                     const filtro = resp.filter(e => e.categoria === categoryId);
-                    setProducts(filtro);
+                    setGames(filtro);
 
                 } else {
-                    setProducts(resp);
+                    setGames(resp);
                 }
 
 
@@ -33,11 +33,11 @@ const ItemListContainer = () => {
             {loading ? 
               <h2>Cargando productos...</h2>
               :
-              <ItemList productos={products}/>
+              <ItemList productos={games}/>
             }
             
         </div>
-        
+
     );
     
 };

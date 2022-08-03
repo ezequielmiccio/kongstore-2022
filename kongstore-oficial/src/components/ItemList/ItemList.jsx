@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Item from "../Item/Item";
-import { GamesContext } from "../products/products"
+import { GamesContext } from "../products/products";
 
 function ItemList () {
     const[games, setGames] = useContext(GamesContext);
