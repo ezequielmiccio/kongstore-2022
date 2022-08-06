@@ -1,7 +1,7 @@
 // UNA VEZ QUE HAGAMOS CLICK EN EL PRODUCTO QUE QUERRAMOS VAMOS A IR A UNA SECCION ESPECIFICA DE ESE PRODUCTO.
 import { useParams } from "react-router-dom"
 import {useState, useEffect} from "react";
-import { gFetch } from "../../products/products";
+import { gFetch } from "../../products/productsProvider";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {

@@ -7,33 +7,30 @@ import Cart from './components/container/Cart/Cart';
 import Login from './components/Login/Login';
 import Message from './components/Message/Message'
 import Aside from './components/Aside/Aside';
-import { GamesProvider } from './components/products/products';
+import { GamesProvider } from './components/products/productsProvider';
 import './App.css';
 
 function App() {
-
-  const count = 0;
 
   return (
 	<BrowserRouter>
 		<GamesProvider>
 
 			<div className="App">
-					<Navbar />
-					<Aside />
+				<Navbar />
+				<Aside />
 
-					<Routes>
-						<Route index path='/' element={<ItemListContainer />} />
-						<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
-						<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
-						<Route path='/cart' element={<Cart />} />
-						<Route path='/login' element={<Login />} />
-						<Route path='/message' element={<Message />} />
+				<Routes>
+					<Route index path='/' element={<ItemListContainer />} />
+					<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
+					<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/message' element={<Message />} />
 
-						<Route path='*' element={<Navigate to='/' />} />
-					</Routes>
+					<Route path='*' element={<Navigate to='/' />} />
+				</Routes>
 				
-				{count}
 			</div>
 			
 		</GamesProvider>
