@@ -23,7 +23,7 @@ function Item ({prod}) {
                     <Link to={`/detail/${prod.id}`}>
 
                         <button href="#" className="card-link">
-                            COMPRAR
+                            AGREGAR AL CARRITO
                         </button>
 
                         <button href="#" className="card-link">

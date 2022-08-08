@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect} from 'react'
-import { gFetch } from '../../products/productsProvider';
+import { gFetch } from '../../GamesContext/GamesContext';
 import ItemList from '../../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-import { GamesContext } from '../../products/productsProvider';
+import { GamesContext } from '../../GamesContext/GamesContext';
 
 const ItemListContainer = () => {
     const {categoryId} = useParams();

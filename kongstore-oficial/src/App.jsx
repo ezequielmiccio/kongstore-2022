@@ -7,34 +7,43 @@ import Cart from './components/container/Cart/Cart';
 import Login from './components/Login/Login';
 import Message from './components/Message/Message'
 import Aside from './components/Aside/Aside';
-import { GamesProvider } from './components/products/productsProvider';
+import { GamesProvider } from './components/GamesContext/GamesContext';
+import { CartProvider } from './components/GamesContext/GamesContext';
 import './App.css';
+
+
+// CONSULTAS TUTOR:
+
+// COMPONENTE SEARCH, BÚSQUEDA INTERNA
+// ENGLOBAR DOS CONTEXTOS Y PASAR TODO POR PARAMETRO O DISTINTOS
+// IMAGENES EN TARJETAS
+// PASAR EL STOCK DEL GAMESCONTEXT POR PROP AL GAMECOUNT
 
 function App() {
 
   return (
-	<BrowserRouter>
-		<GamesProvider>
+	<CartProvider>
+		<BrowserRouter>
+			<GamesProvider>
+					<div className="App">
+						<Navbar />
+						<Aside />
 
-			<div className="App">
-				<Navbar />
-				<Aside />
+						<Routes>
+							<Route index path='/' element={<ItemListContainer />} />
+							<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
+							<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
+							<Route path='/cart' element={<Cart />} />
+							<Route path='/login' element={<Login />} />
+							<Route path='/message' element={<Message />} />
 
-				<Routes>
-					<Route index path='/' element={<ItemListContainer />} />
-					<Route index path='/categoria/:categoryId' element={<ItemListContainer />} />
-					<Route path='/detail/:detailId' element={<ItemDetailContainer />} />
-					<Route path='/cart' element={<Cart />} />
-					<Route path='/login' element={<Login />} />
-					<Route path='/message' element={<Message />} />
-
-					<Route path='*' element={<Navigate to='/' />} />
-				</Routes>
-				
-			</div>
-			
-		</GamesProvider>
-	</BrowserRouter>
+							<Route path='*' element={<Navigate to='/' />} />
+						</Routes>
+						
+					</div>
+			</GamesProvider>
+		</BrowserRouter>
+	</CartProvider>
   )
 }
 
