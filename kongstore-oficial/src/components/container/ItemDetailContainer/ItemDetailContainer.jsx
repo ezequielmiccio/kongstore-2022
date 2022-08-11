@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import {useState, useEffect} from "react";
 import { gFetch } from "../../GamesContext/GamesContext";
 import ItemDetail from "./ItemDetail";
+import { Spinner } from "../../Spinner/Spinner";
 
 const ItemDetailContainer = () => {
     const [itemProd, setItemProd] = useState([]);
@@ -13,7 +14,6 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true);
-        // si coincide me devuelve con array con filter id
         gFetch
         .then((resp) => {
             if(detailId) {
@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
 
         <div>
             {loading ?
-                <p>Cargando detalle ...</p>
+                <Spinner />
              : 
                 <ItemDetail detail={itemProd}/> 
             }
