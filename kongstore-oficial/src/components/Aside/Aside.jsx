@@ -12,7 +12,7 @@ const Aside = () => {
             >
                 <ul>
 
-                    <Link to='/categoria/pc'>
+                    <Link to={'/categoria/PC'}>
                         <li>
                             <span>
                                 PC
@@ -20,7 +20,7 @@ const Aside = () => {
                         </li>
                     </Link>
                     
-                    <Link to='/categoria/ps4'>
+                    <Link to='/categoria/PS4'>
                         <li>
                             <span>
                                 PS4
@@ -28,7 +28,7 @@ const Aside = () => {
                         </li>
                     </Link>
                     
-                    <Link to='/categoria/ps5'>
+                    <Link to='/categoria/PS5'>
                         <li>
                             <span>
                                 PS5

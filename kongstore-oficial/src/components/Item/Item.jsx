@@ -20,8 +20,9 @@ function Item ({prod}) {
                     <p className="list-group-item">{prod.info}</p>
                 </ul>
                 <div className="card-body">
-                    <Link to={`/detail/${prod.id}`}>
 
+                    <Link to={`/detail/${prod.id}`}>
+                        
                         <button href="#" className="card-link">
                             AGREGAR AL CARRITO
                         </button>

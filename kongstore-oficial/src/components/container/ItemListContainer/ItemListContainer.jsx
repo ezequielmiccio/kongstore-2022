@@ -3,9 +3,10 @@ import { gFetch } from '../../GamesContext/GamesContext';
 import ItemList from '../../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { GamesContext } from '../../GamesContext/GamesContext';
+import { Spinner } from '../../Spinner/Spinner';
 
 const ItemListContainer = () => {
-    const {categoryId} = useParams();
+    const {categoryId} = useParams()
     const [games, setGames] = useContext(GamesContext)
     const [loading, setLoading] = useState(false);
     
@@ -25,13 +26,13 @@ const ItemListContainer = () => {
             })
             .catch((err) => console.log(err))
             .finally(() => setLoading(false));
-    }, [categoryId])
+    }, [categoryId, setGames])
 
     return(
 
         <div>
             {loading ? 
-              <h2>Cargando productos...</h2>
+              <Spinner />
               :
               <ItemList productos={games}/>
             }
